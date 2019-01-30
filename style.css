@@ -1,0 +1,8 @@
+#insc{
+    width: 200px;
+    height: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+}
