@@ -1,8 +1,14 @@
 #insc{
     width: 200px;
-    height: 500px;
+    height: 600px;
     margin: auto;
     display: flex;
     flex-direction: column;
-    justify-content:space-around;
+
+
+    }
+
+#enregistrer{
+    margin-top: 17.7px;
+    display: block;
 }
