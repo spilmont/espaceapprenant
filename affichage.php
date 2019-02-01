@@ -7,9 +7,10 @@
 
 include "dbconn.php";
 require "classes/affichage.php";
+require "classes/inscription.php";
+
 
 $aff= new affichage();
-
 
 
 ?>
@@ -24,6 +25,7 @@ $aff= new affichage();
 </head>
 <body>
 <h1> Espace administration</h1>
+<a href="adduseradmin.php" id="add"> ajouter un utilisateur</a>
 <?php $aff->screen(); ?>
 
 </body>

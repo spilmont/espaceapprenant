@@ -12,7 +12,11 @@ require "classes/inscription.php";
 
 $inscription = new inscription();
 
+
 $inscription->setcreatapprenant();
 
+
+
+header("Location:affichage.php");
 
 

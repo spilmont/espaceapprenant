@@ -25,3 +25,15 @@
      flex-direction: column;
      justify-content: space-around;
  }
+
+ #add{
+     padding: 5px;
+     margin-bottom:4%;
+     background-color: blue;
+     border-radius: 20px;
+     text-decoration: none;
+     color: white;
+ }
+ #add:hover{
+     background-color: red;
+ }

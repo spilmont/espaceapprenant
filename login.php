@@ -11,7 +11,6 @@ require "classes/login.php";
 
 $login = new login();
 
-$login->login();
 
 ?>
 
@@ -23,7 +22,7 @@ $login->login();
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<form action="" method="post">
+<form action="check_login.php" method="post">
     <fieldset>
         <legend>login</legend>
         <input type="text" name="user">
@@ -31,6 +30,8 @@ $login->login();
         <input type="submit">
     </fieldset>
 </form>
-
+<?php
+$login->login();
+?>
 </body>
 </html>

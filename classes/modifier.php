@@ -60,34 +60,34 @@ class modifier
 
     public function __construct()
     {
-        $this->user = (isset($_POST['user'])?$_POST['user']:null);
+        $this->user = $_POST['user'];
         filter_var($this->user,FILTER_SANITIZE_STRING);
 
-        $this->nom  = (isset($_POST['nom'])?$_POST['nom']:null);
+        $this->nom  = $_POST['nom'];
         filter_var($this->nom,FILTER_SANITIZE_STRING);
 
-        $this->prenom= (isset($_POST['prenom'])?$_POST['prenom']:null);
+        $this->prenom= $_POST['prenom'];
         filter_var($this->prenom,FILTER_SANITIZE_STRING);
 
-        $this->age=(isset($_POST['age'])?$_POST['age']:null);
+        $this->age=$_POST['age'];
         filter_var($this->age,FILTER_SANITIZE_NUMBER_INT);
 
-        $this->mdp = (isset($_POST['mdp'])?$_POST['mdp']:null);
+        $this->mdp = $_POST['mdp'];
         filter_var($this->mdp,FILTER_SANITIZE_STRING);
 
-        $this->description= (isset($_POST['description'])?$_POST['description']:null);
+        $this->description= $_POST['description'];
         filter_var($this->description,FILTER_SANITIZE_STRING);
 
-        $this->avatar = (isset($_POST['avatar'])?$_POST['avatar']:null);
+        $this->avatar = $_POST['avatar'];
         filter_var($this->avatar,FILTER_SANITIZE_STRING);
 
-        $this->email = (isset($_POST['email'])?$_POST['email']:null);
+        $this->email = $_POST['email'];
         filter_var($this->email,FILTER_SANITIZE_EMAIL);
 
-        $this->validation = (isset($_POST['id_rank'])?$_POST['id_rank']:null);
+        $this->validation = $_POST['id_rank'];
         filter_var($this->validation,FILTER_SANITIZE_NUMBER_INT);
 
-        $this->session = (isset($_POST['id_session'])?$_POST['id_session']:null);
+        $this->session = $_POST['id_session'];
         filter_var($this->session,FILTER_SANITIZE_NUMBER_INT);
 
         $this->id = $_POST['id'];
@@ -101,7 +101,7 @@ class modifier
        global $conn;
 
        $sql="update `apprenant`
-              set  nom='$this->nom', prenom='$this->prenom', age='$this->age', avatar='$this->avatar', description='$this->description'
+              set  nom='$this->nom', prenom='$this->prenom', age='$this->age', avatar='$this->avatar', description='$this->description',
                    nom_utilisateur='$this->user', password='$this->mdp', email='$this->email', rank_user='$this->validation', id_session='$this->session'
               where id='$this->id' ";
 

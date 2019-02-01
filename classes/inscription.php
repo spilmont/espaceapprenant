@@ -62,6 +62,11 @@ class inscription
         filter_var($this->avatar,FILTER_SANITIZE_STRING);
         $this->email = $_POST['email'];
         filter_var($this->email,FILTER_SANITIZE_EMAIL);
+        $this->validation = $_POST['id_rank'];
+        filter_var($this->validation,FILTER_SANITIZE_NUMBER_INT);
+        $this->session = $_POST['id_session'];
+        filter_var($this->session,FILTER_SANITIZE_NUMBER_INT);
+
     }
 
     /**
@@ -77,6 +82,24 @@ class inscription
 
             $stmt = $conn->prepare("insert into apprenant(`nom`,`prenom`,`age`,`avatar`,`description`,`password`,`nom_utilisateur`,`id_session`,`email`,`rank_user`) value (?,?,?,?,?,?,?,1,?,1)");
             $stmt->bind_param("ssisssss",$this->nom,$this->prenom,$this->age,$this->avatar,$this->description,$this->mdp,$this->user,$this->email);
+            $stmt->execute();
+            $stmt->close();
+
+        }else{
+            echo "veuillez remplir tout les champs obligatoires";
+        }
+
+    }
+
+    public function setcreatapprenantadmin(){
+
+
+        global $conn;
+
+        if ($this->user !=="" && $this->nom !=="" && $this->prenom !=="" && $this->age !=="" && $this->mdp !=="" && $this->email !==""  ){
+
+            $stmt = $conn->prepare("insert into apprenant(`nom`,`prenom`,`age`,`avatar`,`description`,`password`,`nom_utilisateur`,`id_session`,`email`,`rank_user`) value (?,?,?,?,?,?,?,?,?,?)");
+            $stmt->bind_param("ssissssisi",$this->nom,$this->prenom,$this->age,$this->avatar,$this->description,$this->mdp,$this->user,$this->session,$this->email, $this->validation);
             $stmt->execute();
             $stmt->close();
 

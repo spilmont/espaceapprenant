@@ -7,7 +7,7 @@
  */
 
 include "dbconn.php";
-require "classes/modifier.php";
+require ".classes/modifier.php";
 
 $modif = new modifier();
 $modif->modifier();

@@ -38,6 +38,7 @@ class affichage
             <th>email</th>
             <th>rank_user</th>
             <th>id_session</th>
+            <th>competences</th>
             <?php
         while ($row = $result->fetch_assoc()){
 
@@ -55,7 +56,7 @@ class affichage
             ?>
             <tr>
                 <td><a href="modifier.php?id=<?=$id ?>&nom=<?=$nom ?>&prenom=<?=$prenom?>&age=<?=$age?>&avatar=<?=$avatar?>&description=<?=$description?>&username=<?=$username?>&mdp=<?=$mdp?>&mail=<?=$mail?>&validation=<?=$validation?>&id_session=<?=$id_session?>"> modifier </a></td>
-                <td><a href="supprimer">supprimer</a> </td>
+                <td><a href="supprimer.php?id=<?=$id ?>">supprimer</a> </td>
                 <td><?= $row['id']?></td>
                 <td><?= $row['nom']?></td>
                 <td><?= $row['prenom'] ?></td>
@@ -67,6 +68,7 @@ class affichage
                 <td><?=$row['email'] ?></td>
                 <td><?= $row['rank_user'] ?></td>
                 <td><?= $row['id_session']?></td>
+                <td><a href="#">cliquer ici</a></td>
             </tr>
 
 <?php

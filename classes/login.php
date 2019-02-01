@@ -52,7 +52,7 @@ class login
             } elseif ($row['rank_user'] == 1) {
                 echo " l'administrateur n'a pas encore activer votre compte";
             } elseif ($row['rank_user'] == null) {
-                echo "veuillez vous connecter";
+                echo "veuillez vous connectez";
             }else{
                 echo "veuillez crrer un compte";
             }
@@ -60,6 +60,14 @@ class login
 
 
         }
+        elseif($this->user!== $row['nom_utilisateur'] and $this->mdp !== $row['password']){
+            echo "utilisateur ou le mot de passe et incorecte ou votre compte n'existe pas";
+            echo "<a href='inscription.php'> creer un compte</a>";
+
+        }else{
+            echo "veuillez vous connectez";
+        }
+
 
     }
 }
