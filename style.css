@@ -12,3 +12,16 @@
     margin-top: 17.7px;
     display: block;
 }
+ td{
+     border: solid black;
+ }
+
+ #mod
+ {
+     margin: auto;
+     width: 30%;
+     height: 550px;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-around;
+ }

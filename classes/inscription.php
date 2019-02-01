@@ -10,13 +10,37 @@
 
 class inscription
 {
+    /**
+     * @var string stock un nom utilisateur
+     */
     protected $user;
+    /**
+     * @var string stock le nom de famille de l'utilisateur
+     */
     protected $nom;
+    /**
+     * @var string stock un prénom de l'utilisateur
+     */
     protected $prenom;
+    /**
+     * @var int stock l'age de l'utilisateur
+     */
     protected $age =0;
+    /**
+     * @var string stock le mot de passe de l'utilisateur
+     */
     protected $mdp;
+    /**
+     * @var string stock une description de lutilisateur (falcultatif)
+     */
     protected $description;
+    /**
+     * @var string stock url d'une image pour un avatar (facultatif)
+     */
     protected $avatar;
+    /**
+     * @var string stock email de l'utilisateur
+     */
     protected $email;
 
 
@@ -40,6 +64,10 @@ class inscription
         filter_var($this->email,FILTER_SANITIZE_EMAIL);
     }
 
+    /**
+     * Cette fonction permets de creer un utilisateur dans la base de données
+     *
+     */
     public function setcreatapprenant(){
 
 
