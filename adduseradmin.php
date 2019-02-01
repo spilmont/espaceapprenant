@@ -15,7 +15,7 @@
 </head>
 <body>
 <div id="insc">
-<form action="check_inscription_admin.php" method="post">
+<form action="check/check_inscription_admin.php" method="post">
     <fieldset ">
         <legend>inscription admin</legend>
     <label for="user"> nom d'utilisateur* </label><input type="text"  id="user" name="user"><br>

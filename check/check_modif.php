@@ -6,10 +6,10 @@
  * Time: 16:36
  */
 
-include "dbconn.php";
-require ".classes/modifier.php";
+include "../dbconn.php";
+require "../classes/modifier.php";
 
 $modif = new modifier();
 $modif->modifier();
 
-header('Location:affichage.php');
+header('Location:../affichage.php');

@@ -6,11 +6,11 @@
  * Time: 19:31
  */
 
-include "dbconn.php";
-require "classes/inscription.php";
+include "../dbconn.php";
+require "../classes/inscription.php";
 
 $isncadmin = new inscription();
 
 $isncadmin->setcreatapprenantadmin();
 
-header("Location:affichage.php");
+header("Location:../affichage.php");

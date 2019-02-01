@@ -21,7 +21,7 @@ require "classes/inscription.php";
 </head>
 <body>
 <div id="insc">
-<form action="check_inscription.php" method="post">
+<form action="check/check_inscription.php" method="post">
     <fieldset ">
         <legend>inscription</legend>
     <label for="user"> nom d'utilisateur* </label><input type="text"  id="user" name="user"><br>

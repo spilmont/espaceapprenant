@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<form action="check_modif.php" method="post">
+<form action="check/check_modif.php" method="post">
     <fieldset id="mod">
         <legend>modifier</legend>
         <input type="hidden" name="id" value="<?= $_GET['id'] ?>">
