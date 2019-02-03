@@ -10,6 +10,6 @@ include "dbconn.php";
 require "classes/supprimer.php";
 
 $supp = new supprimer();
-$supp->supprimer();
+$supp->supprimerapprenant();
 
 header("Location:affichage.php");

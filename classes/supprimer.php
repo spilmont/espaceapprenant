@@ -16,11 +16,26 @@ class supprimer
         $this->id=$_GET['id'];
     }
 
-    public function supprimer(){
+    public function supprimerapprenant(){
 
         global $conn;
         $sql ="DELETE FROM `apprenant` WHERE `apprenant`.`id` = '$this->id' ";
         $conn->query($sql);
     }
+
+    public function supprimercompetences(){
+
+        global $conn;
+        $sql ="DELETE FROM `competences` WHERE `competences`.`id` = '$this->id' ";
+        $conn->query($sql);
+    }
+
+    public function supprimertechno(){
+
+        global $conn;
+        $sql ="DELETE FROM `techno` WHERE `techno`.`id` = '$this->id' ";
+        $conn->query($sql);
+    }
+
 
 }

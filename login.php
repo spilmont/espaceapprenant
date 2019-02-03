@@ -22,7 +22,7 @@ $login = new login();
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<form action="check/check_login.php" method="post">
+<form action="" method="post">
     <fieldset>
         <legend>login</legend>
         <input type="text" name="user">

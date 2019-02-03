@@ -42,6 +42,22 @@ class inscription
      * @var string stock email de l'utilisateur
      */
     protected $email;
+    /**
+     * @var string stock competence du formulaire
+     */
+    protected $competence;
+    /**
+     * @var string stock le niveau front ou back
+     */
+    protected $end;
+    /**
+     * @var string stock la techno
+     */
+    protected $techno;
+    /**
+     * @var int stock le id de la competence a associée
+     */
+    protected $idCompetence;
 
 
     public function __construct()
@@ -66,6 +82,15 @@ class inscription
         filter_var($this->validation,FILTER_SANITIZE_NUMBER_INT);
         $this->session = $_POST['id_session'];
         filter_var($this->session,FILTER_SANITIZE_NUMBER_INT);
+        $this->competence = $_POST['competence'];
+        filter_var($this->competence,FILTER_SANITIZE_STRING);
+        $this->end = $_POST['niveau'];
+        filter_var($this->end,FILTER_SANITIZE_STRING);
+        $this->techno = $_POST['techno'];
+        filter_var($this->techno,FILTER_SANITIZE_STRING);
+        $this->idCompetence = $_POST['id_competence'];
+        filter_var($this->idCompetence,FILTER_SANITIZE_NUMBER_INT);
+
 
     }
 
@@ -91,6 +116,10 @@ class inscription
 
     }
 
+    /**
+     * Cette fonction permets a l'admin de creer un utilisateur dans la base de données
+     *
+     */
     public function setcreatapprenantadmin(){
 
 
@@ -112,5 +141,43 @@ class inscription
 
 
     }
+
+    /**
+     * Cette fonction permets a l'admin creer une competence
+     */
+    public function setcreatecompetence(){
+
+
+
+
+            global $conn;
+
+
+                $stmt = $conn->prepare("insert into competences(`competence`,`end`) value (?,?)");
+                $stmt->bind_param("ss",$this->competence,$this->end);
+                $stmt->execute();
+                $stmt->close();
+
+
+
+
+
+    }
+
+    public function setcreattechno(){
+        global $conn;
+
+
+
+            $stmt = $conn->prepare("insert into techno(`techno`,`id_competence`) value (?,?)");
+            $stmt->bind_param("si",$this->techno,$this->idCompetence);
+            $stmt->execute();
+            $stmt->close();
+
+
+    }
+
+
+
 
 }

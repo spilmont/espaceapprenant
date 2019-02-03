@@ -25,8 +25,12 @@ $aff= new affichage();
 </head>
 <body>
 <h1> Espace administration</h1>
-<a href="adduseradmin.php" id="add"> ajouter un utilisateur</a>
-<?php $aff->screen(); ?>
+<a href="adduseradmin.php" class="add"> ajouter un utilisateur</a>
+<a href="competences.php" class="add"> ajouter une competence</a>
+<a href="techno.php" class="add"> ajouter une techno</a>
+
+
+<?php $aff->screenapprenant(); ?>
 
 </body>
 </html>

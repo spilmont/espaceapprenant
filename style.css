@@ -1,6 +1,6 @@
 #insc{
     width: 200px;
-    height: 600px;
+    height: 300px;
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -26,7 +26,7 @@
      justify-content: space-around;
  }
 
- #add{
+ .add{
      padding: 5px;
      margin-bottom:4%;
      background-color: blue;
@@ -34,6 +34,21 @@
      text-decoration: none;
      color: white;
  }
- #add:hover{
+.add:hover{
      background-color: red;
  }
+
+#techno{
+    width: 450px;
+
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+
+}
+table{
+
+
+    margin-left: auto;
+    margin-right: auto;
+}
