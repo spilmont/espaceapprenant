@@ -25,8 +25,10 @@ class login
      */
     public function __construct()
     {
-        $this->user = (isset($_POST['user'])?$_POST['user']:null);
-        $this->mdp = (isset($_POST['mdp'])?$_POST['mdp']:null);
+        $this->user = (isset($_POST['user']) ? $_POST['user'] : null);
+        $this->user = filter_var($this->user, FILTER_SANITIZE_STRING);
+        $this->mdp = (isset($_POST['mdp']) ? $_POST['mdp'] : null);
+        $this->mdp = filter_var($this->mdp, FILTER_SANITIZE_STRING);
     }
 
 
